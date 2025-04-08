@@ -1,84 +1,113 @@
 /* src/components/Dashboard.css */
+
 .home-dashboard-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  padding: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  background-color: #f8f9fc;
 }
 
 .dashboard-view {
-  padding: 50px;
+  padding: 40px;
 }
+
 .dashboard-tile {
-  padding: 20px;
-  border-radius: 3px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f4f4f4;
+  position: relative;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: #eaeaea; /* Light gray tile background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.dashboard-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .tile-title {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2f2f2f;
 }
 
 .tile-subtitle {
-  margin-top: 5px;
+  margin-top: 6px;
+  font-size: 1rem;
   color: #666;
 }
 
 .tile-value {
-  margin-top: 10px;
-  font-size: 1.5rem;
+  margin-top: 15px;
+  font-size: 2rem;
   font-weight: bold;
+  color: #1c1c1c;
 }
 
 .tile-icon {
   position: absolute;
-  top: 0.1rem;
-  right: 0.1rem;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: #4a90e2;
+  background: #d4e6fb;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 .icon-wrapper {
-  transition: border-color 0.3s; /* Add a smooth transition effect for the border */
+  transition: all 0.3s ease-in-out;
 }
 
 .icon-wrapper:hover {
-  border: 1px solid #78a9ff; /* Add a blue border on hover */
-  cursor: pointer;
+  border: 2px solid #4a90e2;
+  border-radius: 50%;
+  padding: 6px;
 }
 
 .tile-title-view {
-  margin: 0;
   font-size: 1.6rem;
-}
-
-.tile-subtitle-view {
-  margin-top: 5px;
-  color: #666;
-}
-
-.tile-value-view {
-  margin-top: 10px;
-  font-size: 1.9rem;
   font-weight: bold;
 }
 
-@media (max-width: 925px) {
+.tile-subtitle-view {
+  margin-top: 6px;
+  color: #555;
+}
+
+.tile-value-view {
+  margin-top: 12px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
   .home-dashboard-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    padding: 22px;
+    gap: 25px;
+    padding: 30px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .home-dashboard-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
   }
 }
 
-@media (max-width: 846px) {
-  .dashboard-view {
-    padding: 0;
+@media (max-width: 480px) {
+  .home-dashboard-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
